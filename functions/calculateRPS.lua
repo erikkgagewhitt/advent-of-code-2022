@@ -7,7 +7,7 @@ local function calculateScore(array)
     local last = string.sub(key, 2, 2);
 
     raws = raws + (RPSVal[last] * value);
-    combinations = combinations + (RPSRes[(RPSCombo[tostring(RPSVal[first] - RPSVal[last])])] * value)
+    combinations = combinations + (RPSRes[(RPSCombo[tostring(RPSVal[first] - RPSVal[last])])] * value);
   end
 
 
@@ -29,6 +29,6 @@ local function calculateRPSArray(array)
 end
 
 function calculateRPS(array)
-  local rpsArray = calculateRPSArray(array)
-  return calculateScore(rpsArray)
+  local rpsArray = calculateRPSArray(array);
+  return calculateScore(rpsArray);
 end
