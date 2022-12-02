@@ -10,7 +10,6 @@ local function calculateScore(array)
     combinations = combinations + (RPSRes[(RPSCombo[tostring(RPSVal[first] - RPSVal[last])])] * value);
   end
 
-
   return raws + combinations;
 end
 
