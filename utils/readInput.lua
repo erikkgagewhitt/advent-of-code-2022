@@ -88,7 +88,3 @@ function readInput(filename, style, options)
     return readInputValues(options)
   end
 end
-
-return {
-  readInput = readInput
-}
