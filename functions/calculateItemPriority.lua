@@ -42,11 +42,11 @@ local function calculateItemPriority(items)
   return sumArray(priorities);
 end
 
-function calculateItemsPriority(rucksacks)
+function calculateItemsPriority(rucksacks, number)
   local itemPriorities = 0;
 
-  for i = 1, #rucksacks, 3 do
-    local repeatItems = findRepeatItemBulk(slice(rucksacks, i, i + 2));
+  for i = 1, #rucksacks, number do
+    local repeatItems = findRepeatItemBulk(slice(rucksacks, i, i + (number - 1)));
     itemPriorities = itemPriorities + calculateItemPriority(repeatItems);
   end
 
