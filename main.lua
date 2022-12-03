@@ -16,7 +16,7 @@ require("utils/wrapGetValue");
 
 function main()
   local rucksacks = readInput("./inputs/rucksacks.txt", "l");
-  local priority = calculateItemsPriority(rucksacks);
+  local priority = calculateItemsPriority(rucksacks, 3);
 
   print(priority);
 end
