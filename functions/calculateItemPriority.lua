@@ -1,28 +1,3 @@
-local function findRepeatItem(rucksack)
-  local rucksackTable = tablizeString(rucksack);
-  local rucksackTableClone = cloneTable(rucksackTable);
-  local halfwayPoint = (#rucksackTable) / 2
-  local pocketOne = slice(rucksackTable, halfwayPoint, nil);
-  local pocketTwo = slice(rucksackTable, nil, halfwayPoint);
-  local prev = nil;
-  local repeats = {};
-
-  for index, value in ipairs(rucksackTableClone) do
-    rucksackTableClone[index] = utf8.codepoint(value);
-  end
-  sort(rucksackTableClone);
-  for index, value in ipairs(rucksackTableClone) do
-    if value == prev then
-      if arrayContainsValue(pocketOne, utf8.char(value)) and arrayContainsValue(pocketTwo, utf8.char(value)) then
-        repeats[utf8.char(value)] = true;
-      end
-    end
-    prev = value;
-  end
-
-  return repeats;
-end
-
 local function findRepeatItemBulk(rucksacks)
   local rucksacksContents = "";
   local rucksacksTable = {};
