@@ -1,19 +1,26 @@
 require("functions/countCalories");
-require("functions/calculateRPS")
+require("functions/calculateItemPriority");
+require("functions/calculateRPS");
 require("statics/rps");
+require("statics/tables");
+require("utils/arrayContainsValue");
+require("utils/cloneTable");
 require("utils/conglomerateArray");
 require("utils/maxArray");
 require("utils/mergeSort");
 require("utils/readInput");
 require("utils/slice");
 require("utils/sumArray");
+require("utils/tablizeString");
 require("utils/wrapGetValue");
 
 function main()
-  local rpsStrategyGuide = readInput("./inputs/rpsStrategyGuide.txt", "k", { ["count"] = false, ["replace"] = RPSChar });
-  local rps = calculateRPS(rpsStrategyGuide);
+  local rucksacks = readInput("./inputs/rucksacks.txt", "l");
+  local priority = calculateItemsPriority(rucksacks);
 
-  print(rps);
+  print(priority);
 end
 
+-- letters = letters();
+lettersKey = lettersKey(-96, -38);
 main();

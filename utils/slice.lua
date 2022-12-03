@@ -7,11 +7,12 @@ function slice(array, first, last)
   if not first and not last then
     return nil;
   else
-    if first then
+    if first and last then
+      start = first;
+      finish = last;
+    elseif first then
       start = 1;
-    end
-
-    if last then
+    elseif last then
       finish = #array;
     end
   end

@@ -6,7 +6,7 @@ local function readInputLine(style, options)
   local line = io.read(style);
   local parsedArray = {};
 
-  if options["token"] then
+  if options and options["token"] then
     local i = 1;
     local j = 1;
 
@@ -41,7 +41,7 @@ function readInputValues(options)
   local line = io.read("l");
   local i = 1;
 
-  if options["count"] then
+  if options and options["count"] then
     while line ~= nil do
       if options["replace"] then
         for key, value in pairs(options["replace"]) do
@@ -60,7 +60,7 @@ function readInputValues(options)
     end
   else
     while line ~= nil do
-      if options["replace"] then
+      if options and options["replace"] then
         for key, value in pairs(options["replace"]) do
           line = line:gsub(key, value);
         end

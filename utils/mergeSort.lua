@@ -28,11 +28,15 @@ local function merge(A, p, q, r)
   end
 end
 
-function mergeSort(A, p, r)
+local function mergeSort(A, p, r)
   if p < r then
     local q = math.floor((p + r) / 2)
     mergeSort(A, p, q)
     mergeSort(A, q + 1, r)
     merge(A, p, q, r)
   end
+end
+
+function sort(A)
+  mergeSort(A, 1, #A);
 end
