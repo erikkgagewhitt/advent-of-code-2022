@@ -1,6 +1,4 @@
-require("functions/countCalories");
-require("functions/calculateItemPriority");
-require("functions/calculateRPS");
+require("functions/calculateAssignments");
 require("statics/rps");
 require("statics/tables");
 require("utils/arrayContainsValue");
@@ -10,17 +8,17 @@ require("utils/maxArray");
 require("utils/mergeSort");
 require("utils/readInput");
 require("utils/slice");
+require("utils/stringToArray");
 require("utils/sumArray");
-require("utils/tablizeString");
 require("utils/wrapGetValue");
 
 function main()
-  local rucksacks = readInput("./inputs/rucksacks.txt", "l");
-  local priority = calculateItemsPriority(rucksacks, 3);
+  local assignments = readInput("./inputs/assignments.txt", "l");
+  local overlapCount = calculateAssignments(assignments);
 
-  print(priority);
+  print(overlapCount);
 end
 
 -- letters = letters();
-lettersKey = lettersKey(-96, -38);
+-- lettersKey = lettersKey(-96, -38);
 main();
